@@ -1,6 +1,6 @@
-import { Auth0Provider } from "@auth0/auth0-react";
-import { PropsWithChildren } from "react";
-import { useNavigate } from "react-router-dom";
+import { Auth0Provider } from '@auth0/auth0-react';
+import { PropsWithChildren } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthProvider = ({ children }: PropsWithChildren) => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
 
   if (!domain || !clientId) {
     throw new Error(
-      "Auth0 is not configured. Follow the instruction on README.md."
+      'Auth0 is not configured. Follow the instruction on README.md.'
     );
   }
 

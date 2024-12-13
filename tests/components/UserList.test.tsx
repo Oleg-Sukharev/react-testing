@@ -21,7 +21,7 @@ describe('UserList', () => {
       // https://testing-library.com/docs/queries/byrole
       // get element with text content === {name: user.name}
 
-      const link = screen.getByRole("link", { name: user.name });
+      const link = screen.getByRole('link', { name: user.name });
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', `/users/${user.id}`)
     })

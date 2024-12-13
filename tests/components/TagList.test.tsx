@@ -1,5 +1,5 @@
-import { screen, render, waitFor } from "@testing-library/react";
-import TagList from "../../src/components/TagList";
+import { screen, render, waitFor } from '@testing-library/react';
+import TagList from '../../src/components/TagList';
 
 // getQuery
 // Synchronous: Checks for an element immediately.

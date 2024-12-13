@@ -8,7 +8,7 @@ describe('ExpandableText', () => {
   const truncatedText = longText.substring(0, limit) + '...';
 
   it('should render the full text if less than 255 characters', () => {
-    const text = "Short text";
+    const text = 'Short text';
     render(<ExpandableText text={text} />);
     expect(screen.getByText(text)).toBeInTheDocument();
   });
