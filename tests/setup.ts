@@ -1,4 +1,12 @@
 import '@testing-library/jest-dom/vitest';
+import ResizeObserver from 'resize-observer-polyfill';
+
+// provide testing environment with ResizeObserver
+global.ResizeObserver = ResizeObserver;
+
+window.HTMLElement.prototype.scrollIntoView = vi.fn();
+window.HTMLElement.prototype.hasPointerCapture = vi.fn();
+window.HTMLElement.prototype.releasePointerCapture = vi.fn();
 
 // Imitate the window object because the test is running in a Node environment, not a browser.
 Object.defineProperty(window, 'matchMedia', {

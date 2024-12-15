@@ -8,7 +8,7 @@ const OrderStatusSelector = ({ onChange }: Props) => {
   return (
     <Select.Root defaultValue="new" onValueChange={onChange}>
       <Select.Trigger />
-      <Select.Content>
+      <Select.Content position='popper'>
         <Select.Group>
           <Select.Label>Status</Select.Label>
           <Select.Item value="new">New</Select.Item>
