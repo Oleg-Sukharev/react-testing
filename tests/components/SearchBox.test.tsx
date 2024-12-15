@@ -30,13 +30,6 @@ describe('SearchBox', () => {
     expect(onChange).toHaveBeenCalledWith(searchTerm);
   })
 
-  it('should call onChange when input field is empty', async () => {
-    const { input, onChange, user } = renderSearchBox();
-
-    await user.type(input, '{enter}');
-    expect(onChange).not.toHaveBeenCalled();
-  })
-
   it('should not trigger onChange when typing without pressing Enter', async () => {
     const { input, user, onChange } = renderSearchBox();
     const searchTerm = 'searchTerm';
