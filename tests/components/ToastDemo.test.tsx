@@ -19,11 +19,11 @@ describe('ToastDemo', () => {
     const toast = await screen.findByText(/success/i);
     expect(toast).toBeInTheDocument();
 
-    // or 
+    // or
 
-    waitFor(() => {
-      const toast = screen.getByText(/success/i);
-      expect(toast).toBeInTheDocument();
-    })
+    // void waitFor(() => {
+    //   const toast = screen.getByText(/success/i);
+    //   expect(toast).toBeInTheDocument();
+    // })
   })
 });

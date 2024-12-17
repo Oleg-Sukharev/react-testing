@@ -6,6 +6,7 @@ describe('ProductImageGallery', () => {
     const { container } = render(<ProductImageGallery imageUrls={[]} />);
 
     // const img = screen.queryByRole('img');
+    // expect(img).toBeNull();
     // expect(img).not.toBeInTheDocument();
 
     expect(container).toBeEmptyDOMElement();
