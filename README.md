@@ -1,21 +1,21 @@
 # Testing React Apps
 
-This is the starter project for my Reacting testing course where you'll learn everything you need to know to effectively test React apps. You can find the full course at: 
+This is the starter project for my Reacting testing course where you'll learn everything you need to know to effectively test React apps. You can find the full course at:
 
-https://codewithmosh.com 
+https://codewithmosh.com
 
-## About this Project 
+## About this Project
 
-This is a React app built with the following technologies and libraries: 
+This is a React app built with the following technologies and libraries:
 
-- Auth0 
-- Tailwind 
+- Auth0
+- Tailwind
 - RadixUI
-- React Router 
-- React Query  
-- Redux Toolkit 
+- React Router
+- React Query
+- Redux Toolkit
 
-Please follow these instructions carefully to setup this project on your machine. 
+Please follow these instructions carefully to setup this project on your machine.
 
 ## Setting up Auth0 for Authentication
 
@@ -35,8 +35,8 @@ Please follow these instructions carefully to setup this project on your machine
 3. **Configure Application Settings:**
 
    - On the application settings page, configure the following settings:
-     - Allowed Callback URLs: `http://localhost:5173` 
-     - Allowed Logout URLs: `http://localhost:5173` 
+     - Allowed Callback URLs: `http://localhost:5173`
+     - Allowed Logout URLs: `http://localhost:5173`
      - Allowed Web Origins: `http://localhost:5173`
    - Save the changes.
 
@@ -50,7 +50,6 @@ Please follow these instructions carefully to setup this project on your machine
    - In the root directory of the project, you'll find a sample `.env` file. Make a copy and save it as `.env.local`.
    - Replace the Auth0 Domain and Client ID with the actual values you obtained from Auth0.
 
-
 ## Running the App
 
 Now that you have set up Auth0 and configured your environment variables, you can run the React app using the following commands:
@@ -63,7 +62,27 @@ npm install
 npm start
 ```
 
-This will start the back-end process at `http://localhost:3000`. If port 3000 is in use on your machine, update the port number in the following files and run `npm start` again: 
+This will start the back-end process at `http://localhost:3000`. If port 3000 is in use on your machine, update the port number in the following files and run `npm start` again:
 
 - json-server.json
 - src/main.tsx
+
+# fakerjs
+
+Generating fake data
+
+1. Variety of Fake Data: Generate realistic data for names, addresses, emails, phone numbers, dates, and more.
+2. Customizable: Customize data formats and localize it to different regions (e.g., German names, French addresses).
+3. Easy to Set Up: Simple installation with npm install @faker-js/faker.
+4. Realistic Data: Creates realistic-looking data ideal for testing UIs, APIs, and databases.
+
+# Mock Service Worker (MSW)
+
+MSW is an API mocking library that intercepts network requests at the network level, making it client-agnostic. It allows you to:
+
+1. Centralized Mock Management
+2. Mock APIs in all environments (browser and Node.js).
+3. Reuse mocks across tests, Storybook, and development.
+4. Simulate realistic API behavior (latency, errors, etc.).
+5. Write tests without modifying app code.
+6. Simplify API testing and speed up development when the backend isn't ready.
