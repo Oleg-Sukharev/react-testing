@@ -86,3 +86,7 @@ MSW is an API mocking library that intercepts network requests at the network le
 4. Simulate realistic API behavior (latency, errors, etc.).
 5. Write tests without modifying app code.
 6. Simplify API testing and speed up development when the backend isn't ready.
+
+# Mock Service Worker/data (@mswjs/data https://www.npmjs.com/package/@mswjs/data/v/0.4.0)
+
+MSW/data: An extension of MSW that simplifies mocking structured data. It provides a way to define models and generate mock data with relationships, useful for scenarios where you need more complex data handling in your mocks, such as generating realistic data for testing.

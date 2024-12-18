@@ -1,10 +1,21 @@
-import { render, screen } from '@testing-library/react';
-import ProductDetail from '../../src/components/ProductDetail';
-import { products } from '../mocks/data';
+import { render, screen } from '@testing-library/react'
+import ProductDetail from '../../src/components/ProductDetail'
 import { server } from '../mocks/server';
 import { http, HttpResponse } from 'msw';
+import { db } from '../mocks/db';
 
 describe('ProductDetail', () => {
+  let productId: number;
+
+  beforeAll(() => {
+    const product = db.product.create();
+    productId = product.id;
+  })
+
+  afterAll(() => {
+    db.product.delete({ where: { id: { equals: productId } } })
+  })
+
   it('should render loading indicator initially', () => {
     render(<ProductDetail productId={1} />);
 
@@ -13,16 +24,12 @@ describe('ProductDetail', () => {
   });
 
   it('should render product details', async () => {
-    const product = products[0];
+    const product = db.product.findFirst({ where: { id: { equals: productId } } })
 
-    render(<ProductDetail productId={1} />);
+    render(<ProductDetail productId={productId} />);
 
-    const heading = await screen.findByRole('heading');
-    const name = await screen.findByText(new RegExp(product.name, 'i'));
-    const price = await screen.findByText(new RegExp(String(product.price), 'i'));
-    expect(heading).toBeInTheDocument();
-    expect(price).toBeInTheDocument();
-    expect(name).toBeInTheDocument();
+    expect(await screen.findByText(new RegExp(product!.name))).toBeInTheDocument();
+    expect(await screen.findByText(new RegExp(product!.price.toString()))).toBeInTheDocument();
   });
 
   it('should render message if product not found', async () => {
