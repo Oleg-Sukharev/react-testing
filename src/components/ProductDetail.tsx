@@ -22,7 +22,7 @@ const ProductDetail = ({ productId }: { productId: number }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div role="status" aria-live="polite">Loading...</div>;
 
   if (error) return <div>Error: {error}</div>;
 
