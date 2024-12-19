@@ -41,10 +41,12 @@ describe('ProductDetail', () => {
     expect(message).toBeInTheDocument();
   })
 
-  it('should render an error for invalid productId', async () => {
-    render(<ProductDetail productId={0} />);
+  it('should render an error if data fetching fails', async () => {
+    server.use(http.get('/products/1', () => HttpResponse.error()));
 
-    const message = await screen.findByText(/invalid/i);
-    expect(message).toBeInTheDocument();
+    render(<ProductDetail productId={1} />);
+
+    const error = await screen.findByText(/error/i);
+    expect(error).toBeInTheDocument();
   })
 })
