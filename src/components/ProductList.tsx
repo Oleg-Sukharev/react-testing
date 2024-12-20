@@ -23,7 +23,7 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div role="status">Loading...</div>;
 
   if (error) return <div>Error: {error}</div>;
 
